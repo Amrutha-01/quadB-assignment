@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HomePage from "./components/homePage/homePage";
+import MovieDetails from "./components/movieDetails/movieDetails";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [movieData, setMovieData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.tvmaze.com/search/shows?q=all")
+      .then((res) => res.json())
+      .then((res) => setMovieData(res))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <HomePage/> */}
+      <Router>
+        <Routes>
+          <Route
+            path="/movie/:id"
+            element={<MovieDetails movieData={movieData} />}
+          />
+          <Route path="/" element={<HomePage movieData={movieData} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

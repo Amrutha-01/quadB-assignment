@@ -1,0 +1,48 @@
+.moviedetails{
+    color: white;
+}
+.main-part{
+    display: flex;
+}
+.rat-gen{
+    display: flex;
+    justify-content: space-around;
+}
+.genres{
+    display: flex;
+}
+.summary{
+    width:50vw;
+    font-size: larger;
+    text-align: justify;
+    padding-left: 6%;
+}
+.main-img{
+    margin: 50px;
+    margin-top: 0%;
+}
+.link{
+    margin-left: 8vw;
+    border-radius: 1px;
+    width:10vw;
+}
+.link button{
+    margin-top: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: large;
+}
+.link button:hover{
+    background-color: transparent;
+    border:1px solid white;
+    border-radius: 10px;
+    color:white
+}
+.link a:hover{
+    color: white;
+}
+.link a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
