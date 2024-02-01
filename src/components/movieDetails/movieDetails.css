@@ -46,3 +46,29 @@
     color: black;
     font-size: larger;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .main-part{
+        display: block;
+    }
+    .summary{
+        width: 90vw;
+    }
+    .link button{
+        margin-bottom: 15px;
+    }
+    .main-img{
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .main-part{
+        display: block;
+    }
+    .summary{
+        width: 90vw;
+        font-size: larger;
+    }
+}
